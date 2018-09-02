@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>我的生活</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+		<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+		<style>
+			.himg img{
+				width: 100pt;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page-group">
+			<div class="page page-current">
+				<div class="list-block">
+					<ul>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">头像</div>
+								<div class="item-after himg">
+									<img class="headimgurl" />
+								</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">昵称</div>
+								<div class="item-after nickname">值</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">国家</div>
+								<div class="item-after country">值</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">省份</div>
+								<div class="item-after province">值</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">所在城市</div>
+								<div class="item-after city">值</div>
+							</div>
+						</li>
+						<li class="item-content">
+							<div class="item-inner">
+								<div class="item-title">OPENID</div>
+								<div class="item-after openid">值</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+		<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+		<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+		<script type="text/javascript">
+			function GetQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+
+			$(function() {
+				console.log("init");
+				var code = GetQueryString("code");
+				$.getJSON("http://si5dpf.natappfree.cc/userinfo?code="+code, null, function(res) {
+					console.log("has data");
+					$(".headimgurl").attr("src",res.headimgurl);
+					$(".nickname").text(res.nickname);
+					$(".country").text(res.country);
+					$(".province").text(res.province);
+					$(".city").text(res.city);
+					$(".openid").text(res.openid);
+				}, function(res) {
+					console.log("error");
+				});
+			});
+		</script>
+	</body>
+
+</html>

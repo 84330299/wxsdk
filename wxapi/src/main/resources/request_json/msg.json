@@ -1,0 +1,54 @@
+=================================================
+订单模板
+{
+  "data": {
+    "time": {
+      "value": "9月22日",
+      "color": "#173177"
+    },
+    "productname": {
+      "value": "巧克力",
+      "color": "#173177"
+    },
+    "total": {
+      "value": "88.88",
+      "color": "#173177"
+    },
+    "buytime": {
+      "value": "2018年8月8日",
+      "color": "#173177"
+    }
+  },
+  "template_id": "d55yS_avIyWBoPmQpgjay4zhJTNyv4BOoAZvwIbWJBc",
+  "touser": "o3qP9tvsZscuLN3jHaEoRQlSUkKQ",
+  "url": "https://www.baidu.com"
+}
+
+=================================================
+文本消息模板
+{
+  "msgtype": "text",
+  "text": {
+    "content": "string"
+  },
+  "touser": "o3qP9tvsZscuLN3jHaEoRQlSUkKQ"
+}
+
+=================================================
+图文消息模板
+{
+  "msgtype": "news",
+  "news": {
+    "articles": [
+      {
+        "description": "string",
+        "picurl": "string",
+        "title": "string",
+        "url": "string"
+      }
+    ]
+  },
+  "touser": "o3qP9tvsZscuLN3jHaEoRQlSUkKQ"
+}
+
+

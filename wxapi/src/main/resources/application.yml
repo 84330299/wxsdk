@@ -1,0 +1,37 @@
+server:
+  port: 80
+wx:
+  #用于单体项目授权页使用
+  user_host: http://si5dpf.natappfree.cc/user
+  validatetoken: wrnwldd
+  appid: wxde23a348a47e311b
+  appsecret: 9dff5678ea66cf4dc2fb9950a9a13f76
+  base_accesstoken_url: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
+  pageauth_url: https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect
+#  accesstoken_url: https://api.weixin.qq.com/cgi-bin/component/api_component_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code
+  accesstoken_url: https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code
+  userlist_url: https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN&next_openid=NEXT_OPENID
+  userinfo_url: https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN
+  sendmsg_url: https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN
+  menu_create: https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN
+  menu_delete: https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=ACCESS_TOKEN
+  menu_get: https://api.weixin.qq.com/cgi-bin/menu/get?access_token=ACCESS_TOKEN
+  template_msg_url: https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN
+  redisexpires: 7100
+spring:
+  thymeleaf:
+    suffix: .html
+    prefix: classpath:/static/
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 1s
+        max-idle: 8
+        min-idle: 0
+swagger:
+  enable: true
